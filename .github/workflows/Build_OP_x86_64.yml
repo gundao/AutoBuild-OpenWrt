@@ -51,12 +51,12 @@ jobs:
 
     - name: Clone source code
       env: 
-        REPO_URL: https://github.com/coolsnowwolf/lede
+        REPO_URL: https://www.github.com/openwrt/openwrt
         REPO_BRANCH: master
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
-        echo "src-git small8 https://github.com/kenzok8/small-package" >> ./feeds.conf.default
+        git clone https://github.com/kenzok8/small-package && cd small-package && git clone https://github.com/cokebar/openwrt-vlmcsd.git && git clone https://github.com/cokebar/luci-app-vlmcsd.git && git clone https://github.com/gundao/rt8125.git && rm -rf nftables && rm -rf nginx && rm -rf miniupnpd && rm -rf luci-lib-ipkg && rm -rf uwsgi
         
     - name: Update & Install feeds
       working-directory: ./openwrt
