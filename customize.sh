@@ -13,3 +13,5 @@
 
 #3. Replace with JerryKuKu’s Argon
 #rm openwrt/package/lean/luci-theme-argon -rf
+cd package && git clone https://github.com/kenzok8/small-package
+cd small-package && git clone https://github.com/cokebar/openwrt-vlmcsd.git && git clone https://github.com/cokebar/luci-app-vlmcsd.git && git clone https://github.com/gundao/rt8125.git && rm -rf nftables && rm -rf nginx && rm -rf miniupnpd && rm -rf luci-lib-ipkg && rm -rf uwsgi
