@@ -97,7 +97,7 @@ jobs:
       working-directory: ./openwrt
       run: |
         echo -e "$(nproc) thread build."
-        make -j$(nproc) V=s
+        make
 
     - name : Upload artifact
       uses: actions/upload-artifact@master
