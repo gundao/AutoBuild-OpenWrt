@@ -59,7 +59,7 @@ jobs:
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt/package
-        git clone https://github.com/kiddin9/openwrt-packages.git && cd openwrt-packages && rm -rf nftables && rm -rf luci-lib-ipkg && rm -rf uwsgi
+        git clone https://github.com/kiddin9/openwrt-packages.git
         
     - name: Update & Install feeds
       working-directory: ./openwrt
