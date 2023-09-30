@@ -55,11 +55,11 @@ jobs:
     - name: Clone source code
       env: 
         REPO_URL: https://www.github.com/openwrt/openwrt
-        REPO_BRANCH: openwrt-23.05
+        REPO_BRANCH: master
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt/package
-        git clone https://github.com/kiddin9/openwrt-packages.git
+        git clone https://github.com/cokebar/openwrt-vlmcsd.git && git clone https://github.com/cokebar/luci-app-vlmcsd.git && git clone https://github.com/gundao/OpenWrt-NIC-Drivers.git
         
     - name: Update & Install feeds
       working-directory: ./openwrt
