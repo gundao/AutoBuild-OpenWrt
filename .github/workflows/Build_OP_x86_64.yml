@@ -58,9 +58,10 @@ jobs:
         REPO_BRANCH: openwrt-23.05
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+        cd openwrt
         echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main" >> "feeds.conf.default"
         echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main" >> "feeds.conf.default"
-        cd openwrt/package
+        cd package
         git clone https://github.com/gngpp/luci-app-design-config.git luci-app-design-config && git clone  https://github.com/gngpp/luci-theme-design.git -b  js luci-theme-design.git && git clone https://github.com/cokebar/openwrt-vlmcsd.git && git clone https://github.com/cokebar/luci-app-vlmcsd.git && git clone --depth 1 https://github.com/vernesong/OpenClash.git -b dev openclash && git clone https://github.com/jerrykuku/luci-theme-argon.git && git clone https://github.com/jerrykuku/luci-app-argon-config.git && git clone https://github.com/sbwml/package_kernel_r8125.git
         
     - name: Update & Install feeds
